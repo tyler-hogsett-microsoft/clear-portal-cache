@@ -1,0 +1,30 @@
+{
+  "name": "clear-portal-cache",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "start": "ts-node src/index.ts",
+    "dev": "ts-node-dev --respawn src/index.ts -u {USERNAME} -p {PASSWORD} -i {PORTAL_ID} -g {GEOCODE}"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/clear": "^0.1.0",
+    "@types/figlet": "^1.2.0",
+    "@types/node-fetch": "^2.5.3",
+    "@types/puppeteer": "^2.0.0",
+    "adal-node": "^0.2.1",
+    "chalk": "^3.0.0",
+    "clear": "^0.1.0",
+    "commander": "^4.0.1",
+    "figlet": "^1.2.4",
+    "node-fetch": "^2.6.0",
+    "puppeteer": "^2.0.0",
+    "ts-node": "^8.5.2",
+    "typescript": "^3.7.2"
+  },
+  "devDependencies": {
+    "@types/node": "^12.12.11",
+    "ts-node-dev": "^1.0.0-pre.44"
+  }
+}
