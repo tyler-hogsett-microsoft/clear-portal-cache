@@ -54,12 +54,8 @@ async function getAccessToken(config: Config) {
     await submitButon.click();
     const staySignedInButton = await page.waitForSelector("input[type=submit][value='Yes']");
     await staySignedInButton.click();
-    const response = await page.goto(loginUrl);
-    if(response !== null) {
-        const referer = response.request().headers()["referer"];
-        const accessToken = referer.replace(/.*access_token=([^&]*).*/g, "$1");
-        return accessToken;
-    } else {
-        throw new Error(`${loginUrl} did not return a response`);
-    }
+    const response = await page.waitForResponse("https://login.microsoftonline.com/kmsi");
+    const location = response.headers()["location"];
+    const accessToken = location.replace(/.*access_token=([^&]*).*/g, "$1");
+    return accessToken;
 }
